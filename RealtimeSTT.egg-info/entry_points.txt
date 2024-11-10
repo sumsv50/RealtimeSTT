@@ -1,0 +1,3 @@
+[console_scripts]
+stt = server.stt_cli_client:main
+stt-server = server.stt_server:main

@@ -1,4 +1,31 @@
-# RealtimeSTT (forked from [KoljaB/RealtimeSTT](https://github.com/KoljaB/RealtimeSTT))
+Metadata-Version: 2.1
+Name: RealtimeSTT
+Version: 0.3.1
+Summary: A fast Voice Activity Detection and Transcription System
+Home-page: https://github.com/KoljaB/RealTimeSTT
+Author: Kolja Beigel
+Author-email: kolja.beigel@web.de
+Keywords: real-time,audio,transcription,speech-to-text,voice-activity-detection,VAD,real-time-transcription,ambient-noise-detection,microphone-input,faster_whisper,speech-recognition,voice-assistants,audio-processing,buffered-transcription,pyaudio,ambient-noise-level,voice-deactivity
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyAudio==0.2.14
+Requires-Dist: faster-whisper==1.0.3
+Requires-Dist: pvporcupine==1.9.5
+Requires-Dist: webrtcvad-wheels==2.0.14
+Requires-Dist: halo==0.0.31
+Requires-Dist: torch
+Requires-Dist: torchaudio
+Requires-Dist: scipy==1.14.1
+Requires-Dist: websockets==v12.0
+Requires-Dist: websocket-client==1.8.0
+Requires-Dist: openwakeword>=0.4.0
+Requires-Dist: numpy<2.0.0
+
+# RealtimeSTT
 [![PyPI](https://img.shields.io/pypi/v/RealtimeSTT)](https://pypi.org/project/RealtimeSTT/)
 [![Downloads](https://static.pepy.tech/badge/RealtimeSTT)](https://pepy.tech/project/KoljaB/RealtimeSTT)
 [![GitHub release](https://img.shields.io/github/release/KoljaB/RealtimeSTT.svg)](https://GitHub.com/KoljaB/RealtimeSTT/releases/)
@@ -28,7 +55,7 @@ https://github.com/user-attachments/assets/797e6552-27cd-41b1-a7f3-e5cbc72094f5
 
 ### Updates
 
-Latest Version: v0.3.7
+Latest Version: v0.3.1
 
 See [release history](https://github.com/KoljaB/RealtimeSTT/releases).
 
@@ -548,17 +575,6 @@ Suggested starting parameters for OpenWakeWord usage:
         wake_word_buffer_duration=1,
         ) as recorder:
 ```
-
-## FAQ
-
-### Q: I encountered the following error: "Unable to load any of {libcudnn_ops.so.9.1.0, libcudnn_ops.so.9.1, libcudnn_ops.so.9, libcudnn_ops.so} Invalid handle. Cannot load symbol cudnnCreateTensorDescriptor." How do I fix this?
-
-**A:** This issue arises from a mismatch between the version of `ctranslate2` and cuDNN. The `ctranslate2` library was updated to version 4.5.0, which uses cuDNN 9.2. There are two ways to resolve this issue:
-1. **Downgrade `ctranslate2` to version 4.4.0**:
-   ```bash
-   pip install ctranslate2==4.4.0
-   ```
-2. **Upgrade cuDNN** on your system to version 9.2 or above.
 
 ## Contribution
 
